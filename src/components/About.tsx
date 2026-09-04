@@ -772,7 +772,7 @@ export default function About() {
       ref={sectionRef}
       id="about"
       className="
-        about-section
+        about-section 
         relative
         overflow-hidden
         px-2
