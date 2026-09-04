@@ -1,8 +1,11 @@
+
+
+
+
 // "use client";
 
 // import { ReactNode, useEffect, useRef } from "react";
 // import {
-//   Code2,
 //   Layers3,
 //   Rocket,
 //   Sparkles,
@@ -35,8 +38,6 @@
 //     };
 //   }, []);
 
-
-
 //   return (
 //     <section
 //       ref={sectionRef}
@@ -45,15 +46,15 @@
 //         about-section
 //         relative
 //         overflow-hidden
-        
-//         px-6
-//         py-28
+//         px-2
+//         py-5
 //         text-white
+//         sm:px-6
+//         sm:py-24
 //         lg:px-12
 //         lg:py-36
 //       "
 //     >
-
 //       {/* =====================================================
 //           BACKGROUND
 //       ====================================================== */}
@@ -64,13 +65,16 @@
 //         className="
 //           pointer-events-none
 //           absolute
-//           left-[-200px]
+//           left-[-250px]
 //           top-[100px]
-//           h-[450px]
-//           w-[450px]
+//           h-[350px]
+//           w-[350px]
 //           rounded-full
-          
-//           blur-[130px]
+//           bg-purple-600/[0.08]
+//           blur-[110px]
+//           sm:h-[450px]
+//           sm:w-[450px]
+//           sm:blur-[130px]
 //         "
 //       />
 
@@ -80,13 +84,16 @@
 //         className="
 //           pointer-events-none
 //           absolute
-//           right-[-150px]
+//           right-[-220px]
 //           bottom-[50px]
-//           h-[400px]
-//           w-[400px]
+//           h-[320px]
+//           w-[320px]
 //           rounded-full
-         
-//           blur-[130px]
+//           bg-blue-600/[0.06]
+//           blur-[110px]
+//           sm:h-[400px]
+//           sm:w-[400px]
+//           sm:blur-[130px]
 //         "
 //       />
 
@@ -103,17 +110,19 @@
 //           CONTENT
 //       ====================================================== */}
 
-//       <div className="relative z-10 mx-auto max-w-[1250px]">
+//       <div className="relative z-10 mx-auto w-full max-w-[1250px]">
 
 //         {/* =================================================
 //             SECTION HEADING
 //         ================================================== */}
 
-//         <div className="mb-20 text-center">
+//         <div className="mb-14 text-center sm:mb-16 lg:mb-20">
+
+//           {/* Badge */}
 
 //           <div
 //             className="
-//               mb-5
+//               mb-4
 //               inline-flex
 //               items-center
 //               gap-2
@@ -121,28 +130,36 @@
 //               border
 //               border-purple-400/20
 //               bg-purple-500/[0.05]
-//               px-4
-//               py-2
-//               text-xs
+//               px-3
+//               py-1.5
+//               text-[10px]
 //               uppercase
-//               tracking-[0.2em]
+//               tracking-[0.18em]
 //               text-purple-300
 //               backdrop-blur-md
+//               sm:mb-5
+//               sm:px-4
+//               sm:py-2
+//               sm:text-xs
+//               sm:tracking-[0.2em]
 //             "
 //           >
-//             <Sparkles size={14} />
+//             <Sparkles size={13} />
 
 //             About Me
 //           </div>
 
 
+//           {/* Heading */}
+
 //           <h2
 //             className="
-//               text-4xl
+//               mx-auto
+//               max-w-[900px]
+//               text-[clamp(2rem,8vw,3.75rem)]
 //               font-bold
+//               leading-[1.05]
 //               tracking-[-0.03em]
-//               sm:text-5xl
-//               lg:text-6xl
 //             "
 //           >
 //             Turning ideas into{" "}
@@ -153,15 +170,22 @@
 //           </h2>
 
 
+//           {/* Description */}
+
 //           <p
 //             className="
 //               mx-auto
-//               mt-6
+//               mt-5
 //               max-w-[650px]
-//               text-base
-//               leading-7
+//               px-2
+//               text-sm
+//               leading-6
 //               text-[#9996ad]
-//               sm:text-lg
+//               sm:mt-6
+//               sm:px-0
+//               sm:text-base
+//               sm:leading-7
+//               md:text-lg
 //             "
 //           >
 //             I&apos;m a Full-Stack Developer who enjoys building
@@ -176,29 +200,47 @@
 //             MAIN ABOUT GRID
 //         ================================================== */}
 
-//         <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-
+//         <div
+//           className="
+//             grid
+//             items-center
+//             gap-12
+//             lg:grid-cols-[0.9fr_1.1fr]
+//             lg:gap-14
+//           "
+//         >
 
 //           {/* =================================================
 //               LEFT — DEVELOPER CARD
-//           ================================================== */}
+//           ================================================= */}
 
-//           <div className="relative mx-auto w-full max-w-[470px]">
+//           <div
+//             className="
+//               relative
+//               mx-auto
+//               w-full
+//               max-w-[470px]
+//             "
+//           >
 
 //             {/* Outer glow */}
 
 //             <div
 //               className="
+//                 pointer-events-none
 //                 absolute
 //                 left-1/2
 //                 top-1/2
-//                 h-[350px]
-//                 w-[350px]
+//                 h-[280px]
+//                 w-[280px]
 //                 -translate-x-1/2
 //                 -translate-y-1/2
 //                 rounded-full
 //                 bg-purple-600/[0.12]
-//                 blur-[100px]
+//                 blur-[80px]
+//                 sm:h-[350px]
+//                 sm:w-[350px]
+//                 sm:blur-[100px]
 //               "
 //             />
 
@@ -209,13 +251,16 @@
 //               className="
 //                 relative
 //                 overflow-hidden
-//                 rounded-[28px]
+//                 rounded-[24px]
 //                 border
 //                 border-white/[0.09]
 //                 bg-[#0b0920]/75
-//                 p-8
+//                 p-5
 //                 shadow-[0_30px_100px_rgba(0,0,0,0.35)]
 //                 backdrop-blur-xl
+//                 sm:rounded-[28px]
+//                 sm:p-7
+//                 md:p-8
 //               "
 //             >
 
@@ -223,24 +268,42 @@
 
 //               <div
 //                 className="
+//                   pointer-events-none
 //                   absolute
 //                   left-1/2
 //                   top-[-100px]
-//                   h-[220px]
-//                   w-[400px]
+//                   h-[200px]
+//                   w-[320px]
 //                   -translate-x-1/2
 //                   rounded-full
 //                   bg-purple-600/[0.12]
-//                   blur-[80px]
+//                   blur-[70px]
+//                   sm:h-[220px]
+//                   sm:w-[400px]
+//                   sm:blur-[80px]
 //                 "
 //               />
 
 
 //               {/* Avatar */}
 
-//               <div className="relative mx-auto mb-7 flex h-32 w-32 items-center justify-center">
+//               <div
+//                 className="
+//                   relative
+//                   mx-auto
+//                   mb-6
+//                   flex
+//                   h-28
+//                   w-28
+//                   items-center
+//                   justify-center
+//                   sm:mb-7
+//                   sm:h-32
+//                   sm:w-32
+//                 "
+//               >
 
-//                 {/* rotating ring */}
+//                 {/* Rotating ring */}
 
 //                 <div
 //                   className="
@@ -268,8 +331,8 @@
 //                 <div
 //                   className="
 //                     flex
-//                     h-24
-//                     w-24
+//                     h-20
+//                     w-20
 //                     items-center
 //                     justify-center
 //                     rounded-full
@@ -277,18 +340,24 @@
 //                     from-purple-600
 //                     via-blue-600
 //                     to-cyan-400
-//                     text-4xl
-//                     font-bold
 //                     shadow-[0_0_50px_rgba(124,58,237,0.45)]
+//                     sm:h-24
+//                     sm:w-24
 //                   "
 //                 >
 //                   <Image
-//                       src="/profile.png"
-//                       alt="Profile"
-//                       width={44}
-//                       height={44}
-//                       className="rounded-full object-cover"
-//                     />
+//                     src="/profile.png"
+//                     alt="Avinash Kumar"
+//                     width={96}
+//                     height={96}
+//                     className="
+//                       h-full
+//                       w-full
+//                       rounded-full
+//                       object-cover
+//                       p-[3px]
+//                     "
+//                   />
 //                 </div>
 
 //               </div>
@@ -298,11 +367,11 @@
 
 //               <div className="relative text-center">
 
-//                 <h3 className="text-2xl font-semibold">
-//                   Avinash Kumar
+//                 <h3 className="text-xl font-semibold sm:text-2xl">
+//                   Avinash Upadhyay
 //                 </h3>
 
-//                 <p className="mt-2 text-sm text-purple-300">
+//                 <p className="mt-1.5 text-xs text-purple-300 sm:mt-2 sm:text-sm">
 //                   Full-Stack Developer
 //                 </p>
 
@@ -311,12 +380,12 @@
 
 //               {/* Divider */}
 
-//               <div className="my-7 h-px bg-white/[0.07]" />
+//               <div className="my-5 h-px bg-white/[0.07] sm:my-7" />
 
 
 //               {/* Small info */}
 
-//               <div className="grid grid-cols-2 gap-4">
+//               <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
 
 //                 <Info
 //                   label="Based in"
@@ -345,7 +414,7 @@
 
 //               <div
 //                 className="
-//                   mt-7
+//                   mt-5
 //                   flex
 //                   items-center
 //                   justify-center
@@ -354,13 +423,26 @@
 //                   border
 //                   border-emerald-400/15
 //                   bg-emerald-400/[0.04]
-//                   py-3
-//                   text-xs
+//                   py-2.5
+//                   text-[11px]
 //                   text-emerald-300
+//                   sm:mt-7
+//                   sm:py-3
+//                   sm:text-xs
 //                 "
 //               >
 
-//                 <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
+//                 <span
+//                   className="
+//                     h-1.5
+//                     w-1.5
+//                     rounded-full
+//                     bg-emerald-400
+//                     shadow-[0_0_10px_rgba(52,211,153,0.8)]
+//                     sm:h-2
+//                     sm:w-2
+//                   "
+//                 />
 
 //                 Open to opportunities
 
@@ -375,15 +457,17 @@
 //               RIGHT — CONTENT
 //           ================================================== */}
 
-//           <div>
+//           <div className="w-full">
 
 //             <span
 //               className="
-//                 text-sm
+//                 text-xs
 //                 font-medium
 //                 uppercase
-//                 tracking-[0.18em]
+//                 tracking-[0.16em]
 //                 text-purple-400
+//                 sm:text-sm
+//                 sm:tracking-[0.18em]
 //               "
 //             >
 //               Who I am
@@ -392,10 +476,11 @@
 
 //             <h3
 //               className="
-//                 mt-4
-//                 text-3xl
+//                 mt-3
+//                 text-[clamp(1.8rem,6vw,2.5rem)]
 //                 font-semibold
-//                 leading-tight
+//                 leading-[1.15]
+//                 sm:mt-4
 //                 sm:text-4xl
 //               "
 //             >
@@ -407,14 +492,19 @@
 //             </h3>
 
 
+//             {/* Description */}
+
 //             <div
 //               className="
-//                 mt-6
+//                 mt-5
 //                 space-y-4
-//                 text-[15px]
-//                 leading-7
+//                 text-sm
+//                 leading-6
 //                 text-[#9996ad]
-//                 sm:text-base
+//                 sm:mt-6
+//                 sm:text-[15px]
+//                 sm:leading-7
+//                 md:text-base
 //               "
 //             >
 
@@ -444,36 +534,64 @@
 //                 SKILL CARDS
 //             ================================================== */}
 
-//                 <div className="mt-10 grid gap-4 sm:grid-cols-3">
+//             <div
+//               className="
+//                 mt-8
+//                 grid
+//                 gap-3
+//                 sm:mt-10
+//                 sm:grid-cols-3
+//                 sm:gap-4
+//               "
+//             >
 
-//                 <AboutCard
-//     icon={<FaLaptopCode size={22} />}
-//     title="Clean Code"
-//     text="Readable and maintainable code."
-//     />
+//               <AboutCard
+//                 icon={<FaLaptopCode size={21} />}
+//                 title="Clean Code"
+//                 text="Readable and maintainable code."
+//               />
 
-//                 <AboutCard
-//                     icon={<Layers3 size={22} />}
-//                     title="Full Stack"
-//                     text="Frontend, backend and databases."
-//                 />
+//               <AboutCard
+//                 icon={<Layers3 size={21} />}
+//                 title="Full Stack"
+//                 text="Frontend, backend and databases."
+//               />
 
-//                 <AboutCard
-//                     icon={<Rocket size={22} />}  
-//                     title="Performance"
-//                     text="Fast and responsive experiences."
-//                 />
+//               <AboutCard
+//                 icon={<Rocket size={21} />}
+//                 title="Performance"
+//                 text="Fast and responsive experiences."
+//               />
 
-//                 </div>
+//             </div>
 
 
 //             {/* Bottom line */}
 
-//             <div className="mt-10 flex items-center gap-4">
+//             <div className="mt-8 flex items-center gap-3 sm:mt-10 sm:gap-4">
 
-//               <div className="h-px w-16 bg-gradient-to-r from-purple-500 to-transparent" />
+//               <div
+//                 className="
+//                   h-px
+//                   w-10
+//                   shrink-0
+//                   bg-gradient-to-r
+//                   from-purple-500
+//                   to-transparent
+//                   sm:w-16
+//                 "
+//               />
 
-//               <span className="text-xs uppercase tracking-[0.2em] text-gray-600">
+//               <span
+//                 className="
+//                   text-[9px]
+//                   uppercase
+//                   tracking-[0.15em]
+//                   text-gray-600
+//                   sm:text-xs
+//                   sm:tracking-[0.2em]
+//                 "
+//               >
 //                 Always building. Always learning.
 //               </span>
 
@@ -502,12 +620,40 @@
 //   value: string;
 // }) {
 //   return (
-//     <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4">
-//       <p className="text-[11px] uppercase tracking-wider text-gray-600">
+//     <div
+//       className="
+//         min-w-0
+//         rounded-xl
+//         border
+//         border-white/[0.06]
+//         bg-white/[0.02]
+//         p-3
+//         sm:p-4
+//       "
+//     >
+//       <p
+//         className="
+//           truncate
+//           text-[9px]
+//           uppercase
+//           tracking-wider
+//           text-gray-600
+//           sm:text-[11px]
+//         "
+//       >
 //         {label}
 //       </p>
 
-//       <p className="mt-1 text-sm font-medium text-gray-300">
+//       <p
+//         className="
+//           mt-1
+//           truncate
+//           text-xs
+//           font-medium
+//           text-gray-300
+//           sm:text-sm
+//         "
+//       >
 //         {value}
 //       </p>
 //     </div>
@@ -520,11 +666,11 @@
 // ============================================================ */
 
 // function AboutCard({
-//    icon,
+//   icon,
 //   title,
 //   text,
 // }: {
-//    icon: ReactNode;
+//   icon: ReactNode;
 //   title: string;
 //   text: string;
 // }) {
@@ -532,28 +678,30 @@
 //     <div
 //       className="
 //         group
-//         rounded-2xl
+//         rounded-xl
 //         border
 //         border-white/[0.07]
 //         bg-white/[0.02]
-//         p-5
+//         p-4
 //         transition-all
 //         duration-300
 //         hover:-translate-y-1
 //         hover:border-purple-400/25
 //         hover:bg-purple-500/[0.04]
+//         sm:rounded-2xl
+//         sm:p-5
 //       "
 //     >
 
 //       <div
 //         className="
-//           mb-4
+//           mb-3
 //           flex
-//           h-10
-//           w-10
+//           h-9
+//           w-9
 //           items-center
 //           justify-center
-//           rounded-xl
+//           rounded-lg
 //           border
 //           border-purple-400/20
 //           bg-purple-500/[0.07]
@@ -562,24 +710,26 @@
 //           duration-300
 //           group-hover:scale-110
 //           group-hover:bg-purple-500/[0.12]
+//           sm:mb-4
+//           sm:h-10
+//           sm:w-10
+//           sm:rounded-xl
 //         "
 //       >
-//          {icon} 
+//         {icon}
 //       </div>
 
 //       <h4 className="text-sm font-semibold text-gray-200">
 //         {title}
 //       </h4>
 
-//       <p className="mt-2 text-xs leading-5 text-gray-600">
+//       <p className="mt-1.5 text-[11px] leading-5 text-gray-600 sm:mt-2 sm:text-xs">
 //         {text}
 //       </p>
 
 //     </div>
 //   );
 // }
-
-
 
 "use client";
 
@@ -627,13 +777,15 @@ export default function About() {
         overflow-hidden
         px-2
         py-5
-        text-white
+        text-slate-900
+        dark:text-white
         sm:px-6
         sm:py-24
         lg:px-12
         lg:py-36
       "
     >
+
       {/* =====================================================
           BACKGROUND
       ====================================================== */}
@@ -649,8 +801,9 @@ export default function About() {
           h-[350px]
           w-[350px]
           rounded-full
-          bg-purple-600/[0.08]
+          bg-purple-600/[0.10]
           blur-[110px]
+          dark:bg-purple-600/[0.08]
           sm:h-[450px]
           sm:w-[450px]
           sm:blur-[130px]
@@ -668,8 +821,9 @@ export default function About() {
           h-[320px]
           w-[320px]
           rounded-full
-          bg-blue-600/[0.06]
+          bg-blue-600/[0.08]
           blur-[110px]
+          dark:bg-blue-600/[0.06]
           sm:h-[400px]
           sm:w-[400px]
           sm:blur-[130px]
@@ -682,7 +836,16 @@ export default function About() {
 
       {/* Stars */}
 
-      <div className="about-stars pointer-events-none absolute inset-0 opacity-50" />
+      <div
+        className="
+          about-stars
+          pointer-events-none
+          absolute
+          inset-0
+          opacity-10
+          dark:opacity-50
+        "
+      />
 
 
       {/* =====================================================
@@ -707,15 +870,18 @@ export default function About() {
               gap-2
               rounded-full
               border
-              border-purple-400/20
-              bg-purple-500/[0.05]
+              border-purple-400/30
+              bg-purple-500/[0.06]
               px-3
               py-1.5
               text-[10px]
               uppercase
               tracking-[0.18em]
-              text-purple-300
+              text-purple-600
               backdrop-blur-md
+              dark:border-purple-400/20
+              dark:bg-purple-500/[0.05]
+              dark:text-purple-300
               sm:mb-5
               sm:px-4
               sm:py-2
@@ -759,7 +925,8 @@ export default function About() {
               px-2
               text-sm
               leading-6
-              text-[#9996ad]
+              text-slate-600
+              dark:text-[#9996ad]
               sm:mt-6
               sm:px-0
               sm:text-base
@@ -815,8 +982,9 @@ export default function About() {
                 -translate-x-1/2
                 -translate-y-1/2
                 rounded-full
-                bg-purple-600/[0.12]
+                bg-purple-600/[0.10]
                 blur-[80px]
+                dark:bg-purple-600/[0.12]
                 sm:h-[350px]
                 sm:w-[350px]
                 sm:blur-[100px]
@@ -832,11 +1000,14 @@ export default function About() {
                 overflow-hidden
                 rounded-[24px]
                 border
-                border-white/[0.09]
-                bg-[#0b0920]/75
+                border-slate-200
+                bg-white/75
                 p-5
-                shadow-[0_30px_100px_rgba(0,0,0,0.35)]
+                shadow-[0_30px_100px_rgba(15,23,42,0.12)]
                 backdrop-blur-xl
+                dark:border-white/[0.09]
+                dark:bg-[#0b0920]/75
+                dark:shadow-[0_30px_100px_rgba(0,0,0,0.35)]
                 sm:rounded-[28px]
                 sm:p-7
                 md:p-8
@@ -855,8 +1026,9 @@ export default function About() {
                   w-[320px]
                   -translate-x-1/2
                   rounded-full
-                  bg-purple-600/[0.12]
+                  bg-purple-600/[0.08]
                   blur-[70px]
+                  dark:bg-purple-600/[0.12]
                   sm:h-[220px]
                   sm:w-[400px]
                   sm:blur-[80px]
@@ -891,7 +1063,8 @@ export default function About() {
                     inset-0
                     rounded-full
                     border
-                    border-purple-400/30
+                    border-purple-400/40
+                    dark:border-purple-400/30
                   "
                 />
 
@@ -901,7 +1074,8 @@ export default function About() {
                     inset-2
                     rounded-full
                     border
-                    border-cyan-400/10
+                    border-cyan-400/20
+                    dark:border-cyan-400/10
                   "
                 />
 
@@ -919,7 +1093,8 @@ export default function About() {
                     from-purple-600
                     via-blue-600
                     to-cyan-400
-                    shadow-[0_0_50px_rgba(124,58,237,0.45)]
+                    shadow-[0_0_50px_rgba(124,58,237,0.30)]
+                    dark:shadow-[0_0_50px_rgba(124,58,237,0.45)]
                     sm:h-24
                     sm:w-24
                   "
@@ -946,11 +1121,11 @@ export default function About() {
 
               <div className="relative text-center">
 
-                <h3 className="text-xl font-semibold sm:text-2xl">
-                  Avinash Kumar
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white sm:text-2xl">
+                  Avinash Upadhyay
                 </h3>
 
-                <p className="mt-1.5 text-xs text-purple-300 sm:mt-2 sm:text-sm">
+                <p className="mt-1.5 text-xs text-purple-600 dark:text-purple-300 sm:mt-2 sm:text-sm">
                   Full-Stack Developer
                 </p>
 
@@ -959,7 +1134,7 @@ export default function About() {
 
               {/* Divider */}
 
-              <div className="my-5 h-px bg-white/[0.07] sm:my-7" />
+              <div className="my-5 h-px bg-slate-200 dark:bg-white/[0.07] sm:my-7" />
 
 
               {/* Small info */}
@@ -1000,11 +1175,14 @@ export default function About() {
                   gap-2
                   rounded-full
                   border
-                  border-emerald-400/15
-                  bg-emerald-400/[0.04]
+                  border-emerald-400/20
+                  bg-emerald-400/[0.05]
                   py-2.5
                   text-[11px]
-                  text-emerald-300
+                  text-emerald-600
+                  dark:border-emerald-400/15
+                  dark:bg-emerald-400/[0.04]
+                  dark:text-emerald-300
                   sm:mt-7
                   sm:py-3
                   sm:text-xs
@@ -1044,7 +1222,8 @@ export default function About() {
                 font-medium
                 uppercase
                 tracking-[0.16em]
-                text-purple-400
+                text-purple-600
+                dark:text-purple-400
                 sm:text-sm
                 sm:tracking-[0.18em]
               "
@@ -1059,12 +1238,14 @@ export default function About() {
                 text-[clamp(1.8rem,6vw,2.5rem)]
                 font-semibold
                 leading-[1.15]
+                text-slate-900
+                dark:text-white
                 sm:mt-4
                 sm:text-4xl
               "
             >
               I build websites that are
-              <span className="text-purple-400">
+              <span className="text-purple-600 dark:text-purple-400">
                 {" "}beautiful,
               </span>{" "}
               functional and scalable.
@@ -1079,7 +1260,8 @@ export default function About() {
                 space-y-4
                 text-sm
                 leading-6
-                text-[#9996ad]
+                text-slate-600
+                dark:text-[#9996ad]
                 sm:mt-6
                 sm:text-[15px]
                 sm:leading-7
@@ -1166,7 +1348,8 @@ export default function About() {
                   text-[9px]
                   uppercase
                   tracking-[0.15em]
-                  text-gray-600
+                  text-slate-500
+                  dark:text-gray-600
                   sm:text-xs
                   sm:tracking-[0.2em]
                 "
@@ -1204,9 +1387,11 @@ function Info({
         min-w-0
         rounded-xl
         border
-        border-white/[0.06]
-        bg-white/[0.02]
+        border-slate-200
+        bg-slate-50/70
         p-3
+        dark:border-white/[0.06]
+        dark:bg-white/[0.02]
         sm:p-4
       "
     >
@@ -1216,7 +1401,8 @@ function Info({
           text-[9px]
           uppercase
           tracking-wider
-          text-gray-600
+          text-slate-500
+          dark:text-gray-600
           sm:text-[11px]
         "
       >
@@ -1229,7 +1415,8 @@ function Info({
           truncate
           text-xs
           font-medium
-          text-gray-300
+          text-slate-700
+          dark:text-gray-300
           sm:text-sm
         "
       >
@@ -1259,14 +1446,18 @@ function AboutCard({
         group
         rounded-xl
         border
-        border-white/[0.07]
-        bg-white/[0.02]
+        border-slate-200
+        bg-white/70
         p-4
         transition-all
         duration-300
         hover:-translate-y-1
-        hover:border-purple-400/25
+        hover:border-purple-400/30
         hover:bg-purple-500/[0.04]
+        dark:border-white/[0.07]
+        dark:bg-white/[0.02]
+        dark:hover:border-purple-400/25
+        dark:hover:bg-purple-500/[0.04]
         sm:rounded-2xl
         sm:p-5
       "
@@ -1282,13 +1473,15 @@ function AboutCard({
           justify-center
           rounded-lg
           border
-          border-purple-400/20
+          border-purple-400/30
           bg-purple-500/[0.07]
-          text-purple-300
+          text-purple-600
           transition-all
           duration-300
           group-hover:scale-110
           group-hover:bg-purple-500/[0.12]
+          dark:border-purple-400/20
+          dark:text-purple-300
           sm:mb-4
           sm:h-10
           sm:w-10
@@ -1298,11 +1491,11 @@ function AboutCard({
         {icon}
       </div>
 
-      <h4 className="text-sm font-semibold text-gray-200">
+      <h4 className="text-sm font-semibold text-slate-800 dark:text-gray-200">
         {title}
       </h4>
 
-      <p className="mt-1.5 text-[11px] leading-5 text-gray-600 sm:mt-2 sm:text-xs">
+      <p className="mt-1.5 text-[11px] leading-5 text-slate-500 dark:text-gray-600 sm:mt-2 sm:text-xs">
         {text}
       </p>
 

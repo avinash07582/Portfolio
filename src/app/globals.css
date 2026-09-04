@@ -1,9 +1,33 @@
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   TAILWIND THEME VARIANTS
+============================================================ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
+
+/* ============================================================
+   THEME VARIABLES
+============================================================ */
+
+:root,
+.light {
+  --background: #f8f7ff;
+  --foreground: #171225;
 }
+
+.dark {
+  --background: #030114;
+  --foreground: #ededed;
+}
+
+
+/* ============================================================
+   TAILWIND THEME
+============================================================ */
 
 @theme inline {
   --color-background: var(--background);
@@ -12,20 +36,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@import "tailwindcss";
+/* ============================================================
+   GLOBAL
+============================================================ */
 
 html {
   scroll-behavior: smooth;
@@ -33,8 +47,12 @@ html {
 
 body {
   margin: 0;
-  background: #06041a; 
-  color: white;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 * {
@@ -117,36 +135,22 @@ body {
 
 
 /* ============================================================
-   REDUCE MOTION
+   STAR LAYERS
 ============================================================ */
-
-@media (prefers-reduced-motion: reduce) {
-  .portal-ring {
-    animation: none;
-  }
-
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* ================= STAR BACKGROUND ================= */
-
-  /* =========================================================
-   REALISTIC ANIMATED STAR FIELD
-   ========================================================= */
 
 .stars {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   background-repeat: repeat;
 }
 
 
-/* =========================================================
+/* ============================================================
    SMALL STARS
-   ========================================================= */
+============================================================ */
 
 .stars-slow {
   opacity: 0.7;
@@ -161,7 +165,6 @@ body {
     radial-gradient(circle at 76% 15%, white 0 1px, transparent 1.8px),
     radial-gradient(circle at 88% 35%, white 0 1px, transparent 1.8px),
     radial-gradient(circle at 95% 8%, white 0 1px, transparent 1.8px),
-
     radial-gradient(circle at 10% 55%, white 0 1px, transparent 1.8px),
     radial-gradient(circle at 24% 72%, white 0 1px, transparent 1.8px),
     radial-gradient(circle at 35% 48%, white 0 1px, transparent 1.8px),
@@ -179,9 +182,9 @@ body {
 }
 
 
-/* =========================================================
+/* ============================================================
    MEDIUM STARS
-   ========================================================= */
+============================================================ */
 
 .stars-medium {
   opacity: 0.85;
@@ -193,28 +196,24 @@ body {
       rgba(139, 92, 246, 0.6) 2.5px,
       transparent 5px
     ),
-
     radial-gradient(
       circle at 31% 64%,
       white 0 1.5px,
       rgba(59, 130, 246, 0.6) 2.5px,
       transparent 5px
     ),
-
     radial-gradient(
       circle at 55% 22%,
       white 0 1.5px,
       rgba(34, 211, 238, 0.6) 2.5px,
       transparent 5px
     ),
-
     radial-gradient(
       circle at 73% 70%,
       white 0 1.5px,
       rgba(139, 92, 246, 0.6) 2.5px,
       transparent 5px
     ),
-
     radial-gradient(
       circle at 91% 45%,
       white 0 1.5px,
@@ -230,16 +229,14 @@ body {
 }
 
 
-/* =========================================================
+/* ============================================================
    BRIGHT STARS
-   ========================================================= */
+============================================================ */
 
 .stars-bright {
   opacity: 1;
 
   background-image:
-
-    /* Purple bright star */
     radial-gradient(
       circle at 18% 20%,
       white 0 3px,
@@ -247,8 +244,6 @@ body {
       rgba(167, 139, 250, 0.35) 9px,
       transparent 18px
     ),
-
-    /* Blue bright star */
     radial-gradient(
       circle at 72% 18%,
       white 0 3px,
@@ -256,8 +251,6 @@ body {
       rgba(96, 165, 250, 0.35) 10px,
       transparent 20px
     ),
-
-    /* Cyan bright star */
     radial-gradient(
       circle at 87% 58%,
       white 0 3px,
@@ -265,14 +258,12 @@ body {
       rgba(34, 211, 238, 0.35) 10px,
       transparent 20px
     ),
-
-    /* Purple bright star */
     radial-gradient(
       circle at 38% 86%,
       white 0 3px,
       rgba(167, 139, 250, 0.9) 4px,
       rgba(167, 139, 250, 0.35) 10px,
-      transparent 20px
+      transparent 18px
     );
 
   animation:
@@ -281,12 +272,11 @@ body {
 }
 
 
-/* =========================================================
-   MOVEMENT
-   ========================================================= */
+/* ============================================================
+   STAR MOVEMENT
+============================================================ */
 
 @keyframes starsDriftSlow {
-
   0% {
     transform: translate(0, 0);
   }
@@ -298,12 +288,9 @@ body {
   100% {
     transform: translate(-40px, 0);
   }
-
 }
 
-
 @keyframes starsDriftMedium {
-
   0% {
     transform: translate(0, 0);
   }
@@ -315,12 +302,9 @@ body {
   100% {
     transform: translate(50px, 0);
   }
-
 }
 
-
 @keyframes brightStarsMove {
-
   0% {
     transform: translate(0, 0);
   }
@@ -332,16 +316,14 @@ body {
   100% {
     transform: translate(0, 40px);
   }
-
 }
 
 
-/* =========================================================
-   TWINKLING
-   ========================================================= */
+/* ============================================================
+   STAR TWINKLING
+============================================================ */
 
 @keyframes starsTwinkleSlow {
-
   0% {
     opacity: 0.45;
   }
@@ -361,12 +343,9 @@ body {
   100% {
     opacity: 0.6;
   }
-
 }
 
-
 @keyframes starsTwinkleMedium {
-
   0% {
     opacity: 0.5;
   }
@@ -386,12 +365,9 @@ body {
   100% {
     opacity: 0.55;
   }
-
 }
 
-
 @keyframes brightStarsBlink {
-
   0% {
     opacity: 0.45;
     transform: scale(0.95);
@@ -416,185 +392,12 @@ body {
     opacity: 0.5;
     transform: scale(0.96);
   }
-
 }
 
-/* =========================================================
+
+/* ============================================================
    GLOBAL SPACE BACKGROUND
-========================================================= */
-
-.stars {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-
-  background-repeat: repeat;
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   SMALL STARS
-========================================================= */
-
-.stars-slow {
-  background-image:
-    radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.75) 1px,
-      transparent 1.5px
-    );
-
-  background-size: 130px 130px;
-
-  animation:
-    starDriftSlow 35s linear infinite,
-    starTwinkleSlow 5s ease-in-out infinite alternate;
-}
-
-
-/* =========================================================
-   MEDIUM STARS
-========================================================= */
-
-.stars-medium {
-  background-image:
-    radial-gradient(
-      circle,
-      rgba(180, 160, 255, 0.9) 1.5px,
-      transparent 2.5px
-    );
-
-  background-size: 230px 210px;
-
-  animation:
-    starDriftMedium 24s linear infinite,
-    starTwinkleMedium 3.5s ease-in-out infinite alternate;
-}
-
-
-/* =========================================================
-   BRIGHT STARS
-========================================================= */
-
-.stars-bright {
-  background-image:
-    radial-gradient(
-      circle,
-      rgba(255, 255, 255, 1) 1.5px,
-      transparent 3px
-    );
-
-  background-size: 360px 330px;
-
-  animation:
-    starDriftBright 18s linear infinite,
-    starTwinkleBright 2.8s ease-in-out infinite alternate;
-
-  filter:
-    drop-shadow(0 0 5px rgba(180, 150, 255, 0.9));
-}
-
-
-/* =========================================================
-   STAR MOVEMENT
-========================================================= */
-
-@keyframes starDriftSlow {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-80px, 100px, 0);
-  }
-}
-
-
-@keyframes starDriftMedium {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(120px, -90px, 0);
-  }
-}
-
-
-@keyframes starDriftBright {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-150px, -120px, 0);
-  }
-}
-
-
-/* =========================================================
-   TWINKLING
-========================================================= */
-
-@keyframes starTwinkleSlow {
-  0% {
-    opacity: 0.35;
-  }
-
-  50% {
-    opacity: 0.7;
-  }
-
-  100% {
-    opacity: 0.45;
-  }
-}
-
-
-@keyframes starTwinkleMedium {
-  0% {
-    opacity: 0.3;
-  }
-
-  40% {
-    opacity: 0.9;
-  }
-
-  70% {
-    opacity: 0.45;
-  }
-
-  100% {
-    opacity: 0.8;
-  }
-}
-
-
-@keyframes starTwinkleBright {
-  0% {
-    opacity: 0.25;
-    filter:
-      drop-shadow(0 0 2px rgba(180, 150, 255, 0.5));
-  }
-
-  50% {
-    opacity: 1;
-    filter:
-      drop-shadow(0 0 8px rgba(190, 160, 255, 1));
-  }
-
-  100% {
-    opacity: 0.4;
-    filter:
-      drop-shadow(0 0 3px rgba(180, 150, 255, 0.7));
-  }
-} 
-
-
-/* =========================================================
-   GLOBAL SPACE BACKGROUND
-========================================================= */
+============================================================ */
 
 .global-space-bg {
   position: fixed;
@@ -605,7 +408,11 @@ body {
   background: #030114;
 }
 
-/* All star layers */
+
+/* ============================================================
+   GLOBAL STAR LAYERS
+============================================================ */
+
 .global-stars {
   position: absolute;
   inset: -20%;
@@ -614,9 +421,9 @@ body {
 }
 
 
-/* =========================================================
-   SMALL STARS
-========================================================= */
+/* ============================================================
+   STAR 1
+============================================================ */
 
 .stars-1 {
   background-image:
@@ -636,9 +443,9 @@ body {
 }
 
 
-/* =========================================================
-   MEDIUM STARS
-========================================================= */
+/* ============================================================
+   STAR 2
+============================================================ */
 
 .stars-2 {
   background-image:
@@ -658,9 +465,9 @@ body {
 }
 
 
-/* =========================================================
-   BRIGHT STARS
-========================================================= */
+/* ============================================================
+   STAR 3
+============================================================ */
 
 .stars-3 {
   background-image:
@@ -683,9 +490,9 @@ body {
 }
 
 
-/* =========================================================
-   STAR MOVEMENT
-========================================================= */
+/* ============================================================
+   GLOBAL STAR MOVEMENT
+============================================================ */
 
 @keyframes starsMove1 {
   from {
@@ -697,7 +504,6 @@ body {
   }
 }
 
-
 @keyframes starsMove2 {
   from {
     transform: translate(0, 0);
@@ -707,7 +513,6 @@ body {
     transform: translate(100px, -80px);
   }
 }
-
 
 @keyframes starsMove3 {
   from {
@@ -720,9 +525,9 @@ body {
 }
 
 
-/* =========================================================
-   STAR BLINKING
-========================================================= */
+/* ============================================================
+   GLOBAL STAR BLINKING
+============================================================ */
 
 @keyframes starsBlink1 {
   0% {
@@ -738,7 +543,6 @@ body {
   }
 }
 
-
 @keyframes starsBlink2 {
   0% {
     opacity: 0.25;
@@ -753,7 +557,6 @@ body {
   }
 }
 
-
 @keyframes starsBlink3 {
   0% {
     opacity: 0.2;
@@ -765,5 +568,50 @@ body {
 
   100% {
     opacity: 0.35;
+  }
+}
+
+
+/* ============================================================
+   LIGHT MODE — KEEP SPACE EFFECTS BUT SOFTER
+============================================================ */
+
+.light .global-space-bg {
+  background: #f8f7ff;
+}
+
+.light .stars-1 {
+  opacity: 0.18;
+}
+
+.light .stars-2 {
+  opacity: 0.15;
+}
+
+.light .stars-3 {
+  opacity: 0.18;
+}
+
+
+/* ============================================================
+   REDUCE MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-ring {
+    animation: none;
+  }
+
+  .stars-slow,
+  .stars-medium,
+  .stars-bright,
+  .stars-1,
+  .stars-2,
+  .stars-3 {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
