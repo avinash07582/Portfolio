@@ -2180,10 +2180,10 @@ export default function Hero() {
                 <SiTypescript className="h-7 w-7 text-[#3178C6] sm:h-8 sm:w-8 lg:h-10 lg:w-10" />
               }
               label="TypeScript"
-              className="left-[44%] top-[40%]"
+              className="left-[55%] top-[38%]"
               index={3}
             />
-
+  
             <TechIcon
               icon={
                 <SiMongodb className="h-7 w-7 text-[#47A248] sm:h-8 sm:w-8 lg:h-10 lg:w-10" />
