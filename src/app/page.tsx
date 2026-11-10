@@ -72,7 +72,7 @@ export default function Home() {
           </section>
 
           <section id="projects" className=" ">
-            <Projects />
+            <Projects/>
           </section>
 
           <section id="contact" className="">
