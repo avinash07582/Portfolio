@@ -48,6 +48,7 @@ import About from "@/components/About";
 import ContactSection from "@/components/Contact";
 import Projects from "@/components/Project";
 import Skills from "@/components/Skills";
+import Resume from "@/components/Resume";
 import StarBackground from "@/components/StarBackground";
 
 export default function Home() {
@@ -74,6 +75,8 @@ export default function Home() {
           <section id="projects" className=" ">
             <Projects/>
           </section>
+
+          <Resume />
 
           <section id="contact" className="">
             <ContactSection />

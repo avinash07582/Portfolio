@@ -1558,7 +1558,47 @@ import {
   SiExpress,
 } from "react-icons/si";
 
+import { useState, useEffect } from "react";
+
+const rotatingRoles = [
+  "Full Stack Developer",
+  "MERN Developer",
+  "Software Developer",
+];
+
 export default function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const fullText = rotatingRoles[roleIndex];
+    const typingSpeed = isDeleting ? 40 : 80;
+    const holdTime = 1800;
+
+    if (!isDeleting && currentText === fullText) {
+      const timeout = setTimeout(() => setIsDeleting(true), holdTime);
+      return () => clearTimeout(timeout);
+    }
+
+    if (isDeleting && currentText === "") {
+      const timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % rotatingRoles.length);
+      }, 350);
+      return () => clearTimeout(timeout);
+    }
+
+    const timeout = setTimeout(() => {
+      setCurrentText((prev) =>
+        isDeleting
+          ? fullText.substring(0, prev.length - 1)
+          : fullText.substring(0, prev.length + 1)
+      );
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [currentText, isDeleting, roleIndex]);
   return (
     <section
       id="home"
@@ -1827,6 +1867,17 @@ export default function Hero() {
 
               experiences
             </h1>
+
+            {/* Smooth Typing Role Animation */}
+            <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-base sm:text-xl md:text-2xl font-medium sm:mt-5">
+              <span className="text-slate-400 dark:text-gray-400 font-normal">I am a</span>
+              <span className="relative inline-flex items-center min-w-[200px] sm:min-w-[270px] text-left">
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text font-bold text-transparent">
+                  {currentText}
+                </span>
+                <span className="ml-1 inline-block h-5 sm:h-6 w-0.5 bg-purple-400 animate-pulse align-middle" />
+              </span>
+            </div>
 
 
             {/* Description */}
