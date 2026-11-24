@@ -28,6 +28,7 @@ interface ProjectItem {
   challenges: string[];
 }
 
+
 const projects: ProjectItem[] = [
   {
     title: "FresherAI",
@@ -64,70 +65,68 @@ const projects: ProjectItem[] = [
       "Isolating service dependencies across diverse agents, solved by containerizing all microservices with Docker for consistent production deployment.",
     ],
   },
-
-{
-  title: "AI Support Chatbot SaaS",
-  category: "Multi-Tenant AI Customer Support SaaS",
-  image: "/chatbot.png",
-  description:
-    "A full-stack multi-tenant AI chatbot SaaS platform that enables businesses to create, customize, and embed AI-powered customer support chatbots into their websites. Features organization-based authentication, secure chat management, website-specific chatbot configurations, and an embeddable widget for seamless integration.",
-  tech: [
-    "Next.js",
-    "MongoDB",
-    "Scalekit",
-    "AI Integration",
-    "JavaScript",
-    "Vercel",
-  ],
-  github: "",
-  live: "",
-  overview:
-    "Built a full-stack AI-powered customer support platform using Next.js App Router, MongoDB, and Scalekit. The platform supports multiple organizations and websites, allowing businesses to manage their own AI chatbots, configure chatbot settings, store conversations securely, and integrate a reusable chat widget into any website using a simple script or embed tag.",
-  keyFeatures: [
-    "Multi-Tenant SaaS Architecture: Supports multiple organizations, users, and websites with isolated data and configurations.",
-    "AI-Powered Customer Support: Provides automated AI chatbot interactions to answer customer queries and improve support efficiency.",
-    "Embeddable Chat Widget: Reusable chatbot widget that can be integrated into external websites using a script or embed tag.",
-    "Authentication & Organizations: Scalekit-powered authentication and organization management for secure multi-user access.",
-    "Chat & Configuration Management: Stores conversations, user information, and website-specific chatbot configurations in MongoDB.",
-    "Scalable Deployment: Deployed using Vercel with a modern Next.js App Router architecture.",
-  ],
-  challenges: [
-    "Designing a multi-tenant architecture to isolate data and chatbot configurations across multiple organizations and websites.",
-    "Building a reusable embeddable chatbot widget that works independently across different external websites.",
-    "Managing secure authentication, organization-level access, and user permissions using Scalekit.",
-    "Handling chat history and website-specific chatbot configurations efficiently using MongoDB.",
-  ],
-},
-
   {
-    title: "LMS System",
-    category: "Full Stack LMS",
-    image: "/lms.png",
+    title: "AI Support Chatbot SaaS",
+    category: "Multi-Tenant AI Customer Support SaaS",
+    image: "/chatbot.png",
     description:
-      "A MERN-based Learning Management System with JWT authentication, RBAC, course management, student enrollment, and progress tracking.",
+      "A full-stack multi-tenant AI chatbot SaaS platform that enables businesses to create, customize, and embed AI-powered customer support chatbots into their websites. Features organization-based authentication, secure chat management, website-specific chatbot configurations, and an embeddable widget for seamless integration.",
     tech: [
-      "React.js",
-      "Node.js",
-      "Express.js",
+      "Next.js",
       "MongoDB",
-      "Mongoose",
-      "JWT",
-      "Tailwind CSS",
+      "Scalekit",
+      "AI Integration",
+      "JavaScript",
+      "Vercel",
     ],
-    github: "https://github.com/avinash07582/LMS-Platform",
-    live: "https://lms-platform-apii.onrender.com/",
+    github: "",
+    live: "",
     overview:
-      "A full-stack MERN learning management platform engineered with robust role-based access control (RBAC), end-to-end course authoring, student enrollment pipelines, and real-time curriculum progress tracking.",
+      "Built a full-stack AI-powered customer support platform using Next.js App Router, MongoDB, and Scalekit. The platform supports multiple organizations and websites, allowing businesses to manage their own AI chatbots, configure chatbot settings, store conversations securely, and integrate a reusable chat widget into any website using a simple script or embed tag.",
     keyFeatures: [
-      "Role-Based Access Control (RBAC): Distinct permission tiers for Admins, Instructors, and Students to safeguard administrative operations.",
-      "Course & Lecture Lifecycle Management: Comprehensive interface for creating modules, publishing multimedia lessons, and structuring syllabi.",
-      "Student Enrollment & Progression: Seamless enrollment workflows with persistent student completion status and module progression.",
-      "Secure Token Authentication: Token-based authentication using JSON Web Tokens (JWT) with HTTP-only cookies and bcrypt password hashing.",
-      "Responsive Glassmorphic UI: Modern, accessible interface styled with Tailwind CSS, optimized across mobile, tablet, and desktop viewports.",
+      "Multi-Tenant SaaS Architecture: Supports multiple organizations, users, and websites with isolated data and configurations.",
+      "AI-Powered Customer Support: Provides automated AI chatbot interactions to answer customer queries and improve support efficiency.",
+      "Embeddable Chat Widget: Reusable chatbot widget that can be integrated into external websites using a script or embed tag.",
+      "Authentication & Organizations: Scalekit-powered authentication and organization management for secure multi-user access.",
+      "Chat & Configuration Management: Stores conversations, user information, and website-specific chatbot configurations in MongoDB.",
+      "Scalable Deployment: Deployed using Vercel with a modern Next.js App Router architecture.",
     ],
     challenges: [
-      "Enforcing strict authorization boundaries across nested routes so students cannot access instructor authoring tools or bypass enrollment requirements.",
-      "Structuring Mongoose schemas to efficiently track granular student lecture completion without excessive database round-trips.",
+      "Designing a multi-tenant architecture to isolate data and chatbot configurations across multiple organizations and websites.",
+      "Building a reusable embeddable chatbot widget that works independently across different external websites.",
+      "Managing secure authentication, organization-level access, and user permissions using Scalekit.",
+      "Handling chat history and website-specific chatbot configurations efficiently using MongoDB.",
+    ],
+  },
+  {
+    title: "Job Portal",
+    category: "Recruitment Platform",
+    image: "/job.png",
+    description:
+      "A job recruitment platform where users can explore jobs, manage applications and interact with a complete backend API.",
+    tech: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Redux",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
+    github: "https://github.com/avinash07582/Job-Portal",
+    live: "https://job-portal-5-frontend-bfqc.onrender.com",
+    overview:
+      "A comprehensive recruitment platform featuring dedicated workflows for Admins, Recruiters, and Applicants, enabling company registration, multi-criteria job postings, resume submissions, and real-time application status tracking.",
+    keyFeatures: [
+      "Dual-Sided Workflow: Tailored dashboards for employers to manage listings and applicants to manage their job search.",
+      "Multi-Criteria Search & Filter: Advanced filtering engine allowing candidates to filter by category, location, salary tier, and experience.",
+      "Role-Based Security: JWT-backed role verification ensuring recruiter actions remain isolated from applicant accounts.",
+      "Application Lifecycle Tracking: Real-time status indicators (Applied, Reviewed, Shortlisted, Rejected) visible to candidates.",
+      "Global State Management: Centralized client-side state powered by Redux for swift filtering and instant UI updates.",
+    ],
+    challenges: [
+      "Designing complex MongoDB relational queries and indices connecting Users, Companies, Jobs, and Application histories with high query performance.",
+      "Synchronizing complex application filters and pagination state without triggering redundant API calls using Redux.",
     ],
   },
   {
@@ -166,37 +165,38 @@ const projects: ProjectItem[] = [
     ],
   },
   {
-    title: "Job Portal",
-    category: "Recruitment Platform",
-    image: "/job.png",
+    title: "LMS System",
+    category: "Full Stack LMS",
+    image: "/lms.png",
     description:
-      "A job recruitment platform where users can explore jobs, manage applications and interact with a complete backend API.",
+      "A MERN-based Learning Management System with JWT authentication, RBAC, course management, student enrollment, and progress tracking.",
     tech: [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "Redux",
+      "React.js",
       "Node.js",
-      "Express",
+      "Express.js",
       "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Tailwind CSS",
     ],
-    github: "https://github.com/avinash07582/Job-Portal",
-    live: "https://job-portal-5-frontend-bfqc.onrender.com",
+    github: "https://github.com/avinash07582/LMS-Platform",
+    live: "https://lms-platform-apii.onrender.com/",
     overview:
-      "A comprehensive recruitment platform featuring dedicated workflows for Admins, Recruiters, and Applicants, enabling company registration, multi-criteria job postings, resume submissions, and real-time application status tracking.",
+      "A full-stack MERN learning management platform engineered with robust role-based access control (RBAC), end-to-end course authoring, student enrollment pipelines, and real-time curriculum progress tracking.",
     keyFeatures: [
-      "Dual-Sided Workflow: Tailored dashboards for employers to manage listings and applicants to manage their job search.",
-      "Multi-Criteria Search & Filter: Advanced filtering engine allowing candidates to filter by category, location, salary tier, and experience.",
-      "Role-Based Security: JWT-backed role verification ensuring recruiter actions remain isolated from applicant accounts.",
-      "Application Lifecycle Tracking: Real-time status indicators (Applied, Reviewed, Shortlisted, Rejected) visible to candidates.",
-      "Global State Management: Centralized client-side state powered by Redux for swift filtering and instant UI updates.",
+      "Role-Based Access Control (RBAC): Distinct permission tiers for Admins, Instructors, and Students to safeguard administrative operations.",
+      "Course & Lecture Lifecycle Management: Comprehensive interface for creating modules, publishing multimedia lessons, and structuring syllabi.",
+      "Student Enrollment & Progression: Seamless enrollment workflows with persistent student completion status and module progression.",
+      "Secure Token Authentication: Token-based authentication using JSON Web Tokens (JWT) with HTTP-only cookies and bcrypt password hashing.",
+      "Responsive Glassmorphic UI: Modern, accessible interface styled with Tailwind CSS, optimized across mobile, tablet, and desktop viewports.",
     ],
     challenges: [
-      "Designing complex MongoDB relational queries and indices connecting Users, Companies, Jobs, and Application histories with high query performance.",
-      "Synchronizing complex application filters and pagination state without triggering redundant API calls using Redux.",
+      "Enforcing strict authorization boundaries across nested routes so students cannot access instructor authoring tools or bypass enrollment requirements.",
+      "Structuring Mongoose schemas to efficiently track granular student lecture completion without excessive database round-trips.",
     ],
   },
 ];
+
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
