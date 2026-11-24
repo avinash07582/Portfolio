@@ -48,7 +48,7 @@ const projects: ProjectItem[] = [
       "Razorpay",
     ],
     github: "https://github.com/avinash07582/FresherAI",
-    live: "https://d1124wqwtq74e6.cloudfront.net",
+    live: "https://fresherai-frontend-9c0t.onrender.com/",
     overview:
       "Built a microservices-based AI platform using LangGraph and LangChain, featuring autonomous AI agents for mock interviews, feedback scoring, resume analysis (ATS score, strengths, and weaknesses), and personalized learning roadmaps with curated videos, articles, estimated time, and difficulty levels.",
     keyFeatures: [
@@ -64,6 +64,41 @@ const projects: ProjectItem[] = [
       "Isolating service dependencies across diverse agents, solved by containerizing all microservices with Docker for consistent production deployment.",
     ],
   },
+
+{
+  title: "AI Support Chatbot SaaS",
+  category: "Multi-Tenant AI Customer Support SaaS",
+  image: "/chatbot.png",
+  description:
+    "A full-stack multi-tenant AI chatbot SaaS platform that enables businesses to create, customize, and embed AI-powered customer support chatbots into their websites. Features organization-based authentication, secure chat management, website-specific chatbot configurations, and an embeddable widget for seamless integration.",
+  tech: [
+    "Next.js",
+    "MongoDB",
+    "Scalekit",
+    "AI Integration",
+    "JavaScript",
+    "Vercel",
+  ],
+  github: "",
+  live: "",
+  overview:
+    "Built a full-stack AI-powered customer support platform using Next.js App Router, MongoDB, and Scalekit. The platform supports multiple organizations and websites, allowing businesses to manage their own AI chatbots, configure chatbot settings, store conversations securely, and integrate a reusable chat widget into any website using a simple script or embed tag.",
+  keyFeatures: [
+    "Multi-Tenant SaaS Architecture: Supports multiple organizations, users, and websites with isolated data and configurations.",
+    "AI-Powered Customer Support: Provides automated AI chatbot interactions to answer customer queries and improve support efficiency.",
+    "Embeddable Chat Widget: Reusable chatbot widget that can be integrated into external websites using a script or embed tag.",
+    "Authentication & Organizations: Scalekit-powered authentication and organization management for secure multi-user access.",
+    "Chat & Configuration Management: Stores conversations, user information, and website-specific chatbot configurations in MongoDB.",
+    "Scalable Deployment: Deployed using Vercel with a modern Next.js App Router architecture.",
+  ],
+  challenges: [
+    "Designing a multi-tenant architecture to isolate data and chatbot configurations across multiple organizations and websites.",
+    "Building a reusable embeddable chatbot widget that works independently across different external websites.",
+    "Managing secure authentication, organization-level access, and user permissions using Scalekit.",
+    "Handling chat history and website-specific chatbot configurations efficiently using MongoDB.",
+  ],
+},
+
   {
     title: "LMS System",
     category: "Full Stack LMS",
